@@ -9,6 +9,7 @@
 </head>
 <body>
 	<div id="header">
+		<%@include file="/WEB-INF/pages/includes/menu.jsp" %>
 		<jsp:invoke fragment="header" />
 	</div>
 	<div id="content">

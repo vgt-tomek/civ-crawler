@@ -1,3 +1,20 @@
+html, body{
+	margin:0px;
+	padding:0px;
+}
+
+#main-menu{
+	margin:8px;
+	padding:5px;
+	border:solid 1px #000000;
+	background-color:#eeeeee;
+	list-style:none;
+	text-align:right;
+}
+#main-menu li{
+	display:inline-block;
+}
+
 #footer p.copyright{
 	font-size:10px;
 	text-align:center;
