@@ -2,12 +2,15 @@ package pl.vgtworld.civcrawler.actions.register;
 
 import java.io.IOException;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import pl.vgtworld.civcrawler.core.CivServlet;
+import pl.vgtworld.civcrawler.services.UsersService;
+import pl.vgtworld.civcrawler.services.UsersServiceException;
 
 @WebServlet("/register")
 public class Register extends CivServlet {
@@ -17,6 +20,9 @@ public class Register extends CivServlet {
 	private static final String REGISTER_SUCCESS_VIEW = "register-success";
 	
 	private static final long serialVersionUID = 1L;
+	
+	@Inject
+	UsersService usersService;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,8 +39,13 @@ public class Register extends CivServlet {
 		RegisterFormValidator validator = new RegisterFormValidator();
 		boolean validationResult = validator.validate(dto);
 		if (validationResult) {
-			//TODO Service call to create user in database.
-			render(REGISTER_SUCCESS_VIEW, req, resp);
+			try {
+				usersService.createNewUser(dto);
+				render(REGISTER_SUCCESS_VIEW, req, resp);
+			} catch (UsersServiceException e) {
+				e.printStackTrace();
+				//TODO display proper error page
+			}
 		} else {
 			req.setAttribute("errors", validator.getErrors());
 			req.setAttribute("dto", dto);
