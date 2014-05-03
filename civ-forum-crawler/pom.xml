@@ -19,8 +19,20 @@
 			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<!-- unit tests -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>1.6.0</version>
+		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<finalName>civ-forum-crawler</finalName>
 	</build>
