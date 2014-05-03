@@ -3,12 +3,15 @@ package pl.vgtworld.civcrawler.actions.register;
 import java.util.ArrayList;
 import java.util.List;
 
+import pl.vgtworld.civcrawler.services.UsersService;
+
 class RegisterFormValidator {
 	
 	enum ErrorMessages {
 		LOGIN_REQUIRED("Login is required."),
 		LOGIN_TOO_SHORT("Login is too short. Minimum length: " + LOGIN_MIN_LENGTH + " characters."),
 		LOGIN_TOO_LONG("Login is too long. Maximum length: " + LOGIN_MAX_LENGTH + " characters."),
+		LOGIN_TAKEN("Login is already taken."),
 		PASSWORD_REQUIRED("Password is required."),
 		PASSWORD_MISMATCH("Passwords doesn't match.");
 		
@@ -33,13 +36,13 @@ class RegisterFormValidator {
 		return validationErrors.toArray(new String[validationErrors.size()]);
 	}
 
-	public boolean validate(RegisterFormDto dto) {
-		validateLogin(dto);
+	public boolean validate(RegisterFormDto dto, UsersService service) {
+		validateLogin(dto, service);
 		validatePassword(dto);
 		return validationErrors.size() == 0;
 	}
 	
-	private boolean validateLogin(RegisterFormDto dto) {
+	private boolean validateLogin(RegisterFormDto dto, UsersService service) {
 		String login = dto.getLogin();
 		
 		if (login == null || login.length() == 0) {
@@ -54,7 +57,9 @@ class RegisterFormValidator {
 			validationErrors.add(ErrorMessages.LOGIN_TOO_LONG.getMessage());
 			return false;
 		}
-		//TODO Validate if login is not already taken.
+		if (!service.isLoginAvailable(login)) {
+			validationErrors.add(ErrorMessages.LOGIN_TAKEN.getMessage());
+		}
 		
 		return true;
 	}

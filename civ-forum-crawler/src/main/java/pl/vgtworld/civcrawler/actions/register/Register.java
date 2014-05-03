@@ -37,7 +37,7 @@ public class Register extends CivServlet {
 		RegisterFormDto dto = new RegisterFormDto(login, password, passwordRepeat);
 		
 		RegisterFormValidator validator = new RegisterFormValidator();
-		boolean validationResult = validator.validate(dto);
+		boolean validationResult = validator.validate(dto, usersService);
 		if (validationResult) {
 			try {
 				usersService.createNewUser(dto);

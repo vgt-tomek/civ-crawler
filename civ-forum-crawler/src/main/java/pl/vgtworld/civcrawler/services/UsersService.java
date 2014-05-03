@@ -32,4 +32,9 @@ public class UsersService {
 			throw new UsersServiceException("Error while creating new user", e);
 		}
 	}
+	
+	public boolean isLoginAvailable(String login) {
+		User user = dao.findByLogin(login);
+		return user == null;
+	}
 }
