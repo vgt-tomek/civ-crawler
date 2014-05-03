@@ -1,4 +1,4 @@
-package pl.vgtworld.civcrawler.actions;
+package pl.vgtworld.civcrawler.actions.register;
 
 import java.io.IOException;
 
