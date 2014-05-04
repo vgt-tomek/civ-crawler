@@ -33,6 +33,10 @@ public class UsersService {
 		}
 	}
 	
+	public User findByLogin(String login) {
+		return dao.findByLogin(login);
+	}
+	
 	public boolean isLoginAvailable(String login) {
 		User user = dao.findByLogin(login);
 		return user == null;
