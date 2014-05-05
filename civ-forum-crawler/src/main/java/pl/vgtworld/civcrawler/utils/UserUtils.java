@@ -20,6 +20,10 @@ public class UserUtils {
 		return generateHash(seed);
 	}
 	
+	public static String generateToken(String token) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+		return generateHash(token);
+	}
+	
 	private static String generateHash(String seed) throws NoSuchAlgorithmException, UnsupportedEncodingException {
 		MessageDigest md = MessageDigest.getInstance("MD5");
 		byte[] result = md.digest(seed.getBytes(CHARSET_NAME));

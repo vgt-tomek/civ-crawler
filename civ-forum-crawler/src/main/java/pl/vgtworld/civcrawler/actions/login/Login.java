@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import pl.vgtworld.civcrawler.core.CivServlet;
 import pl.vgtworld.civcrawler.services.UsersService;
+import pl.vgtworld.civcrawler.services.UsersServiceException;
 
 @WebServlet("/login")
 public class Login extends CivServlet {
@@ -33,8 +34,13 @@ public class Login extends CivServlet {
 		LoginFormValidator validator = new LoginFormValidator();
 		boolean validationResult = validator.validate(dto, usersService);
 		if (validationResult) {
-			//TODO Set cookie for logged user.
-			render("login-success", req, resp);
+			try {
+				usersService.login(login, (HttpServletRequest) req, (HttpServletResponse) resp);
+				render("login-success", req, resp);
+			} catch (UsersServiceException e) {
+				e.printStackTrace();
+				// TODO display proper error page
+			}
 		} else {
 			req.setAttribute("errors", validator.getErrors());
 			req.setAttribute("dto", dto);

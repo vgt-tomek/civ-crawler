@@ -6,17 +6,25 @@ import java.util.Date;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import pl.vgtworld.civcrawler.actions.register.RegisterFormDto;
+import pl.vgtworld.civcrawler.dao.UserTokensDao;
 import pl.vgtworld.civcrawler.dao.UsersDao;
 import pl.vgtworld.civcrawler.entities.User;
+import pl.vgtworld.civcrawler.entities.UserToken;
 import pl.vgtworld.civcrawler.utils.UserUtils;
 
 @Stateless
 public class UsersService {
 	
 	@Inject
-	UsersDao dao;
+	UsersDao usersDao;
+	
+	@Inject
+	UserTokensDao userTokensDao;
 	
 	public void createNewUser(RegisterFormDto registerDto) throws UsersServiceException {
 		try {
@@ -27,18 +35,41 @@ public class UsersService {
 			user.setSalt(salt);
 			user.setPassword(passwordHash);
 			user.setCreatedAt(new Date());
-			dao.add(user);
+			usersDao.add(user);
 		} catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
 			throw new UsersServiceException("Error while creating new user", e);
 		}
 	}
 	
 	public User findByLogin(String login) {
-		return dao.findByLogin(login);
+		return usersDao.findByLogin(login);
 	}
 	
 	public boolean isLoginAvailable(String login) {
-		User user = dao.findByLogin(login);
+		User user = usersDao.findByLogin(login);
 		return user == null;
+	}
+	
+	public void login(String login, HttpServletRequest request, HttpServletResponse response)
+		throws UsersServiceException {
+		try {
+			User user = usersDao.findByLogin(login);
+			
+			UserToken token = new UserToken();
+			token.setUser(user);
+			token.setCreatedAt(new Date());
+			token.setToken(UserUtils.generateToken(user.getLogin() + System.currentTimeMillis()));
+			token.setIp(request.getRemoteAddr());
+			userTokensDao.add(token);
+			
+			Cookie userCookie = new Cookie("user", user.getLogin());
+			Cookie tokenCookie = new Cookie("token", token.getToken());
+			userCookie.setHttpOnly(true);
+			tokenCookie.setHttpOnly(true);
+			response.addCookie(userCookie);
+			response.addCookie(tokenCookie);
+		} catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
+			throw new UsersServiceException("Error while trying to login user.", e);
+		}
 	}
 }
