@@ -68,8 +68,26 @@ public class UsersService {
 			tokenCookie.setHttpOnly(true);
 			response.addCookie(userCookie);
 			response.addCookie(tokenCookie);
+			request.setAttribute("user", user);
 		} catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
 			throw new UsersServiceException("Error while trying to login user.", e);
 		}
+	}
+	
+	public User validateLoginCookies(Cookie userCookie, Cookie tokenCookie) {
+		//TODO Also check if ip address changed.
+		String login = userCookie.getValue();
+		User user = usersDao.findByLogin(login);
+		
+		if (user == null) {
+			return null;
+		}
+		
+		UserToken token = userTokensDao.findLastTokenForUser(user);
+		
+		if (token.getToken().equals(tokenCookie.getValue())) {
+			return user;
+		}
+		return null;
 	}
 }
