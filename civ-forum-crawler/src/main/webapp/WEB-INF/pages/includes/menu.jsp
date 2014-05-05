@@ -1,7 +1,10 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <ul id="main-menu">
 	<c:if test="${user != null}">
-		<li>Logged as <c:out value="${user.login}" /></li>
+		<li>
+			Logged as <c:out value="${user.login}" />
+			(<a href="<%= request.getContextPath() %>/logout">Logout</a>)
+		</li>
 	</c:if>
 	<li><a href="<%= request.getContextPath() %>/">Home</a></li>
 	
