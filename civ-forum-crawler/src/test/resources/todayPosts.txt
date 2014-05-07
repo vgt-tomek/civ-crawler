@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>civ.org.pl forums</title>
+	<link rel="stylesheet" href="tforumnew.css">
+<link rel="alternate" type="application/rss+xml" title="civ.org.pl news - Latest news in the civ community - in English." href="http://www.civ.org.pl/news/rssgenerator.php?lang=Eng">
+ <link rel="alternate" type="application/rss+xml" title="Wieści civ.org.pl - Najnowsze wiadomości ze sceny civ - w języku polskim." href="http://www.civ.org.pl/news/rssgenerator.php?lang=Pol">
+<link rel="SHORTCUT ICON" href="http://www.civ.org.pl/grafa/grafika/favicon.png">
+  <script type="text/javascript" src="slidemenu.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+<!--<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2605469-3";
+urchinTracker();
+</script>
+<meta name="verify-v1" content="MIAGNGIRJ9RAavS0iyw83/6v3lcsSZu9yHgr03ex1Ko=" /> 	-->
+</head>
+<body >
+
+<div style="position:absolute;right:50px;top:50px;">
+	<a href="index.php?lang=Pol"><img src="http://civ.org.pl/grafa/grafika/Pol.png" style="border: 2px solid #7f735a;" alt="Zmień język na polski." title="Zmień język na polski."/></a>&nbsp;<a href="index.php?lang=Eng"><img src="http://civ.org.pl/grafa/grafika/Eng.png" style="border: 2px solid #7f735a;" alt="Switch to English." title="Switch to English." /></a>
+</div>
+<!--<div style="position:absolute;left:105px;top:17px;">
+	<a href="http://en.wikipedia.org/wiki/2010_Polish_Air_Force_Tu-154_crash" target="_new"><img src="http://civ.org.pl/grafa/grafika/mourn.gif" border="0"/></a>
+</div>-->
+
+<TABLE  BORDER=0 CELLPADDING=2 CELLSPACING=0 class="lineblack" WIDTH="100%"><TR><TD valign="top">
+	<TABLE BORDER=0 CELLPADDING="0" CELLSPACING=0 WIDTH="100%">
+	 <TR><TD width="100%" class="lineblack">
+<!-- top -->
+
+	 	<Table border="0" cellspacing="1" cellpadding="0" width="100%"><TR><TD class="topleft">
+		<TABLE border="0" cellspacing="0" cellpadding="0" width="100%"><TR><TD class="topleft">
+			<a href="http://forums.civ.org.pl/index.php"><img src="images/logo.png" border=0></a>
+		</TD><td class="topright" valign="top">
+			<IMG SRC="images/napis.gif" hspace="8" vspace="6"><br>
+			</TD></TR></TABLE></TD></TR></TABLE>
+	<Table border="0" cellspacing="1" cellpadding="0" width="100%">
+	 <TR class="linewhite" height="4"><TD class="lineblack">
+
+	 <table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
+
+      <tr class="linewhite"><td height="4"></td></tr>
+	 </table></TD></TR></TABLE>
+	 <Table border="0" cellspacing="1" cellpadding="0" width="100%">
+	 <tr><td class="panelleft" valign=top>
+	 	<TABLE border="0" cellspacing="1" cellpadding="0" width="100%">
+		 <TR><TD align="center" valign="bottom">
+
+			<font size=2>
+			<a href="http://forums.civ.org.pl/index.php">Forum</a> |
+			<a href="http://forums.civ.org.pl/member.php?action=register">Rejestracja</a> |
+			<a href="http://forums.civ.org.pl/listmembers.php">Lista Użytkowników</a> |
+			<a href="http://forums.civ.org.pl/faq.php?Action=ViewFAQ&FAQID=6"><b>Regulamin</b></a> |
+			<a href="http://forums.civ.org.pl/activelist.php">Aktywni Użytkownicy</a> |
+			<a href="http://forums.civ.org.pl/stats.php">Statystyki</a> |
+			<a href="http://forums.civ.org.pl/calendar.php">Kalendarz</a> |
+			<a href="http://forums.civ.org.pl/help.php">Pomoc</a> |
+			<a href="http://forums.civ.org.pl/faq.php">FAQ</a> |
+			<a href="http://forums.civ.org.pl/search.php">Szukaj</a> |
+			<a href="http://forums.civ.org.pl/pm.php?action=inbox">Prywatne Wiadomości</a> |
+			<a href="http://forums.civ.org.pl/member.php?action=useroptions">Opcje Użytkownika</a> |
+			<a href="http://www.civ.org.pl">Strona Główna</font></a>
+</td></tr>
+<tr>
+<td align="center" valign="bottom">
+<font size=3>
+<a href="http://forums.civ.org.pl/gamelist.php?mygames=2">Moje Gry</a> |
+<a href="http://forums.civ.org.pl/gamelist.php?mygames=1">Moje Aktywne Gry</a>
+
+</font>
+<br/>
+<!--<a href="http://www.civ.org.pl/zlot3.html" target="_new"><img src="http://www.civ.org.pl/grafa/grafika/zlotXbanner2.jpg" border="0"/></a>-->
+<!--<img src="http://www.civ.org.pl/grafa/grafika/fb_steam_banner_Pol.png" usemap="#copmap" border="0" width="620" height="120" alt="" />
+<map name="copmap">
+<area shape="rect" coords="0,0,307,115" href="http://www.facebook.com/pages/civorgpl/377963847976" alt="" title="" target="_new"  />
+<area shape="rect" coords="308,0,615,115" href="http://steamcommunity.com/groups/civ5" alt="" title="" target="_new"   />
+</map>-->
+
+</td></tr>
+</TABLE></td></tr></table>
+
+
+			<Table border="0" cellspacing="1" cellpadding="0" width="100%">
+			 <TR class="linewhite" height="4"><TD class="lineblack">
+	 <table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
+      <tr class="linewhite"><td height="4"></td></tr>
+	 </table></TD></TR></TABLE>
+
+	 <table border="0" cellspacing="1" cellpadding="0" width="100%">
+
+	  <tr><td class="panelleft">
+<a name="result">
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td></td>
+	</tr>
+</table>
+<table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" class="BorderColor"><tr><td>
+<table width="100%" border="0" cellspacing="1" cellpadding="4">
+	<tr valign="top">
+		<td align="left" width="18" class="TitleCells">&nbsp;</td>
+		<td align="left" width="100%" class="TitleCells">Temat</td>
+		<td align="center" nowrap class="TitleCells">Forum</td>
+		<td align="center" nowrap class="TitleCells">Autor</td>
+		<td align="center" nowrap class="TitleCells">Utworzony</td>
+	</tr>
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/blank.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320356">Re: Realism Invictus - temat techniczny spolszczenia</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=107">Civ4 - Rise Of Mankind</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=2310">LordFistas</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 19:00</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/blank.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320355">Re: osiagniecia - achievements</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=118">Civ5 - Ogólne</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=13268">datysu</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 18:08</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/blank.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320354">Re: Jaka to melodia, czyli zabawa dla forumowiczów</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=8">Ogólne</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=3204">ramzes46</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 18:04</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/blank.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320353">Re: osiagniecia - achievements</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=118">Civ5 - Ogólne</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=3204">ramzes46</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 18:00</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/blank.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320352">Re: Masz pytanie odnośnie gry? Zadaj je TUTAJ</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=118">Civ5 - Ogólne</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=3204">ramzes46</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 17:55</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/blank.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320351">Re: Realism Invictus - temat techniczny spolszczenia</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=107">Civ4 - Rise Of Mankind</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=2310">LordFistas</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 17:21</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/blank.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320350">Re: Realism Invictus - temat techniczny spolszczenia</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=107">Civ4 - Rise Of Mankind</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=1190">jop</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 17:00</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/blank.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320349">Re: osiagniecia - achievements</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=118">Civ5 - Ogólne</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=13268">datysu</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 16:59</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/blank.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320348">Re: Strategie turowe też są ciekawe!</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=118">Civ5 - Ogólne</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=13212">Duster96</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 15:59</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/post.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320347">The Planet Rising - GotM dla Piratów</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=7">SMAC - Główne</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=11331">Hlaskover</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 15:22</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/blank.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320346">Re: Masz pytanie odnośnie gry? Zadaj je TUTAJ</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=118">Civ5 - Ogólne</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=8767">bolo99</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 14:44</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/blank.gif"></td>
+		<td align="left" width="100%" class="MsgBG2">Przenieś <b><a href="misc.php?action=gotomsg&amp;MsgID=320345">Re: FAQ - multiplayer</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=128">Civ 5 - Multiplayer</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=12915">Jadh</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 14:23</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/blank.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320344">Re: Masz pytanie odnośnie gry? Zadaj je TUTAJ</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=118">Civ5 - Ogólne</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=6154">alabuz</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 14:03</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/post.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320343">Re: FFA - Wtorek 6 maja</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=128">Civ 5 - Multiplayer</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=2678">Jarech</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 12:57</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/post.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320342">Re: FFA - Wtorek 6 maja</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=128">Civ 5 - Multiplayer</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=5768">Lifaen</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 12:32</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/blank.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320340">Re: Smiech to zdrowie!</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=8">Ogólne</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=6010">Einstein</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 09:17</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/blank.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320338">Re: Jaka to melodia, czyli zabawa dla forumowiczów</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=8">Ogólne</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=4281">Ceasar Of Rome</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 08:28</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/post.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320335">Re: Realism Invictus - temat techniczny spolszczenia</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=107">Civ4 - Rise Of Mankind</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=4829">Attyla</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 06, 2014 o 07:08</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/blank.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320332">Re: Realism Invictus - temat techniczny spolszczenia</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=107">Civ4 - Rise Of Mankind</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=5051">MDR</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 05, 2014 o 21:54</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/post.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320330">Re: Brak zadowolenia za budynki</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=118">Civ5 - Ogólne</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=6282">MaPS</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 05, 2014 o 21:30</td>
+	</tr>
+
+	<tr valign="top">
+		<td width="18" class="MsgBG1"><img border="0" src="posticons/post.gif"></td>
+		<td align="left" width="100%" class="MsgBG2"> <b><a href="misc.php?action=gotomsg&amp;MsgID=320329">Re: DyploNa6 :: KRONIKA ::</a></b></td>
+		<td nowrap align="center" class="MsgBG1"><a href="viewboard.php?BoardID=144">PBEM</a></td>
+		<td nowrap align="center" class="MsgBG2"><a href="member.php?action=viewprofile&amp;UserID=2924">kasztelan_mirmil</a></td>
+		<td nowrap align="left" class="MsgBG1"><span class="date">Maj 05, 2014 o 20:51</td>
+	</tr>
+
+</table>
+</td></tr></table>
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td></td>
+	</tr>
+</table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr><td align="center"></td></tr>
+	<tr>
+		<td align="center" style="font-size:9px;">
+	<!--COPYRIGHT NOTICE -  DO NOT REMOVE - DO NOT ALTER - KEEP VISIBLE!!-->
+		tForum version b0.94.1.2 (&copy; 2003 <a href="http://forums.civ.org.pl/misc.php?action=viewcredits">tForumDevTeam</a>)<br>
+	<!--COPYRIGHT NOTICE -  DO NOT REMOVE - DO NOT ALTER - KEEP VISIBLE!!-->
+		</td>
+		</tr>
+    <tr>
+				<td align="center">
+				<BR>The comments published here represent only the personal opinions of the respective users. civ.org.pl and it's staff is not held responsible for the
+				contents of the posts.
+				<BR>
+				<BR>Publikowane komentarze są prywatnymi opiniami użytkowników portalu. Portal civ.org.pl ani jego redakcja nie ponosi odpowiedzialności za treść opinii.
+				<BR><BR>
+				<BR>
+    <b><font size="2">hosted by artserwis.pl - <a href="http://www.artserwis.pl/" target="_blank">praca, konkursy, portfolia</a> dla twórców.</font></b>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
