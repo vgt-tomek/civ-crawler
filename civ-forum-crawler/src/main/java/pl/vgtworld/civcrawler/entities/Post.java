@@ -2,6 +2,7 @@ package pl.vgtworld.civcrawler.entities;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,7 +16,7 @@ public class Post {
 	@Id
 	private int id;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Thread thread;
 	
 	@Column(name = "created_at")
