@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class ThreadParser {
 	
-	private static final String THREAD_ID_PATTERN = "print.php\\?TopicID=([0-9]+)";
+	private static final String THREAD_ID_PATTERN = "print\\.php\\?TopicID=([0-9]+)";
 	
 	private static final String PAGE_NUMBER_PATTERN = "option value=\"([0-9]+)\" SELECTED";
 
@@ -20,8 +20,12 @@ public class ThreadParser {
 		return findInteger(page, THREAD_ID_PATTERN);
 	}
 	
-	private int findPageNumber(String page) throws ParseException {
-		return findInteger(page, PAGE_NUMBER_PATTERN);
+	private int findPageNumber(String page) {
+		try {
+			return findInteger(page, PAGE_NUMBER_PATTERN);
+		} catch (ParseException e) {
+			return 0;
+		}
 	}
 	
 	private int findInteger(String page, String pattern) throws ParseException {
@@ -30,6 +34,6 @@ public class ThreadParser {
 		if (matcher.find()) {
 			return Integer.parseInt(matcher.group(1));
 		}
-		throw new ParseException("Unable to find thread id.");
+		throw new ParseException("Unable to find pattern match.");
 	}
 }
