@@ -52,7 +52,7 @@ public class Crawler {
 				if (thread == null) {
 					thread = new Thread();
 					thread.setId(threadDto.getThreadId());
-					thread.setTitle("");
+					thread.setTitle(threadDto.getTitle());
 				}
 				Post post = new Post();
 				post.setId(postDto.getMessageId());

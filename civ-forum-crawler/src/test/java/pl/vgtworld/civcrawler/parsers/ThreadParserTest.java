@@ -18,5 +18,6 @@ public class ThreadParserTest {
 		assertThat(result).isNotNull();
 		assertThat(result.getThreadId()).isEqualTo(20999);
 		assertThat(result.getPage()).isEqualTo(2);
+		assertThat(result.getTitle()).isEqualTo("civ.org.pl forums > Space 4X - Ogólne > Galactic Civilization III");
 	}
 }

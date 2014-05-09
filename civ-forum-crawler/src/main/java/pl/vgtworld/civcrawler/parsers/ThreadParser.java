@@ -13,6 +13,7 @@ public class ThreadParser {
 		ThreadDto dto = new ThreadDto();
 		dto.setThreadId(findThreadId(page));
 		dto.setPage(findPageNumber(page));
+		dto.setTitle(findThreadTitle(page));
 		return dto;
 	}
 	
@@ -28,11 +29,19 @@ public class ThreadParser {
 		}
 	}
 	
+	private String findThreadTitle(String page) throws ParseException {
+		return findString(page, "<title>(.*)</title>");
+	}
+	
 	private int findInteger(String page, String pattern) throws ParseException {
+		return Integer.parseInt(findString(page, pattern));
+	}
+	
+	private String findString(String page, String pattern) throws ParseException {
 		Pattern compiledPattern = Pattern.compile(pattern);
 		Matcher matcher = compiledPattern.matcher(page);
 		if (matcher.find()) {
-			return Integer.parseInt(matcher.group(1));
+			return matcher.group(1);
 		}
 		throw new ParseException("Unable to find pattern match.");
 	}

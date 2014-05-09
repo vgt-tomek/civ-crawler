@@ -6,6 +6,8 @@ public class ThreadDto {
 	
 	private int page;
 	
+	private String title;
+	
 	public int getThreadId() {
 		return threadId;
 	}
@@ -22,4 +24,11 @@ public class ThreadDto {
 		this.page = page;
 	}
 	
+	public String getTitle() {
+		return title;
+	}
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
 }
