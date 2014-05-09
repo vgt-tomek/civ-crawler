@@ -25,6 +25,7 @@ CREATE TABLE `threads` (
 CREATE TABLE `posts` (
 `id` INT UNSIGNED NOT NULL PRIMARY KEY,
 `thread_id` INT UNSIGNED NOT NULL,
+`page` INT UNSIGNED NOT NULL,
 `created_at` DATETIME NOT NULL,
 CONSTRAINT `post_thread_id_fkey` FOREIGN KEY (`thread_id`) REFERENCES `threads` (`id`)
 	ON DELETE CASCADE ON UPDATE CASCADE

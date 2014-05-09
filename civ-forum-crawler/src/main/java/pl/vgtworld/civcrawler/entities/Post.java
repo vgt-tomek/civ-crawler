@@ -19,6 +19,8 @@ public class Post {
 	@ManyToOne(cascade=CascadeType.ALL)
 	private Thread thread;
 	
+	private int page;
+	
 	@Column(name = "created_at")
 	private Date createdAt;
 	
@@ -36,6 +38,14 @@ public class Post {
 	
 	public void setThread(Thread thread) {
 		this.thread = thread;
+	}
+	
+	public int getPage() {
+		return page;
+	}
+	
+	public void setPage(int page) {
+		this.page = page;
 	}
 	
 	public Date getCreatedAt() {
