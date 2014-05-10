@@ -1,5 +1,7 @@
 package pl.vgtworld.civcrawler.parsers;
 
+import java.util.Date;
+
 public class PostDto {
 	
 	private int messageId;
@@ -7,6 +9,8 @@ public class PostDto {
 	private int userId;
 	
 	private String userName;
+	
+	private Date createdAt;
 	
 	public int getMessageId() {
 		return messageId;
@@ -30,6 +34,14 @@ public class PostDto {
 	
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+	
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
 	}
 	
 }
