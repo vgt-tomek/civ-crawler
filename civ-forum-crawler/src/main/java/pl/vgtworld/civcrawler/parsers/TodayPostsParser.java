@@ -23,7 +23,6 @@ public class TodayPostsParser {
 				dto.setUserId(Integer.parseInt(matcher.group(2)));
 				dto.setUserName(matcher.group(3));
 				posts.add(dto);
-				System.out.println(matcher.group());
 			}
 			Collections.reverse(posts);
 			return posts.toArray(new PostDto[posts.size()]);
