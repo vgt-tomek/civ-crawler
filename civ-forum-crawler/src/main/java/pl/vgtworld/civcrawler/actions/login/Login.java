@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import pl.vgtworld.civcrawler.core.CivServlet;
 import pl.vgtworld.civcrawler.services.UsersService;
 import pl.vgtworld.civcrawler.services.UsersServiceException;
@@ -16,6 +19,8 @@ import pl.vgtworld.civcrawler.services.UsersServiceException;
 public class Login extends CivServlet {
 	
 	private static final long serialVersionUID = 1L;
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(Login.class);
 	
 	@Inject
 	UsersService usersService;
@@ -38,10 +43,11 @@ public class Login extends CivServlet {
 				usersService.login(login, (HttpServletRequest) req, (HttpServletResponse) resp);
 				render("login-success", req, resp);
 			} catch (UsersServiceException e) {
-				e.printStackTrace();
+				LOGGER.error("Unexpected exception while trying to login user.", e);
 				// TODO display proper error page
 			}
 		} else {
+			LOGGER.info("Failed login attempt for user {}.", login);
 			req.setAttribute("errors", validator.getErrors());
 			req.setAttribute("dto", dto);
 			render("login", req, resp);

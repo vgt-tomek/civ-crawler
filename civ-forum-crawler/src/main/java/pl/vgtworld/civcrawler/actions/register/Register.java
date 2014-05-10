@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import pl.vgtworld.civcrawler.core.CivServlet;
 import pl.vgtworld.civcrawler.services.UsersService;
 import pl.vgtworld.civcrawler.services.UsersServiceException;
@@ -20,6 +23,8 @@ public class Register extends CivServlet {
 	private static final String REGISTER_SUCCESS_VIEW = "register-success";
 	
 	private static final long serialVersionUID = 1L;
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(Register.class);
 	
 	@Inject
 	UsersService usersService;
@@ -42,8 +47,9 @@ public class Register extends CivServlet {
 			try {
 				usersService.createNewUser(dto);
 				render(REGISTER_SUCCESS_VIEW, req, resp);
+				LOGGER.info("New user ({}) registered.", login);
 			} catch (UsersServiceException e) {
-				e.printStackTrace();
+				LOGGER.error("Unexpected exception while trying to register new user.", e);
 				//TODO display proper error page
 			}
 		} else {
