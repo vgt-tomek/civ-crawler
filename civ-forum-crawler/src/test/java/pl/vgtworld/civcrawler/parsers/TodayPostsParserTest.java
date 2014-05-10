@@ -17,7 +17,11 @@ public class TodayPostsParserTest {
 		
 		assertThat(parse).hasSize(21);
 		assertThat(parse[0].getMessageId()).isEqualTo(320329);
+		assertThat(parse[0].getUserId()).isEqualTo(2924);
+		assertThat(parse[0].getUserName()).isEqualTo("kasztelan_mirmil");
 		assertThat(parse[20].getMessageId()).isEqualTo(320356);
+		assertThat(parse[20].getUserId()).isEqualTo(2310);
+		assertThat(parse[20].getUserName()).isEqualTo("LordFistas");
 	}
 	
 }
