@@ -16,8 +16,8 @@ public class TodayPostsParserTest {
 		PostDto[] parse = parser.parse(page);
 		
 		assertThat(parse).hasSize(21);
-		assertThat(parse[0].getMessageId()).isEqualTo(320356);
-		assertThat(parse[20].getMessageId()).isEqualTo(320329);
+		assertThat(parse[0].getMessageId()).isEqualTo(320329);
+		assertThat(parse[20].getMessageId()).isEqualTo(320356);
 	}
 	
 }
