@@ -11,10 +11,12 @@ import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import pl.vgtworld.civcrawler.dao.ForumReadMarkersDao;
 import pl.vgtworld.civcrawler.dao.PostsDao;
 import pl.vgtworld.civcrawler.dao.ThreadsDao;
 import pl.vgtworld.civcrawler.entities.Post;
 import pl.vgtworld.civcrawler.entities.Thread;
+import pl.vgtworld.civcrawler.entities.User;
 import pl.vgtworld.civcrawler.services.dao.ThreadWithNewPosts;
 
 @Stateless
@@ -28,6 +30,9 @@ public class ThreadsService {
 	@Inject
 	PostsDao postsDao;
 	
+	@Inject
+	ForumReadMarkersDao forumReadMarkersDao;
+	
 	public void add(Thread thread) {
 		dao.add(thread);
 	}
@@ -40,6 +45,17 @@ public class ThreadsService {
 		LOGGER.debug("Load threads with new posts since {}.", date);
 		Post[] newPosts = postsDao.findNewSince(date);
 		
+		return mergePostsIntoThreads(newPosts);
+	}
+
+	public ThreadWithNewPosts[] findWithUnreadPosts(User user) {
+		Date date = forumReadMarkersDao.findLastDateForUser(user.getId());
+		Post[] newPosts = postsDao.findUnread(user, date);
+		
+		return mergePostsIntoThreads(newPosts);
+	}
+	
+	private ThreadWithNewPosts[] mergePostsIntoThreads(Post[] newPosts) {
 		Map<Integer, ThreadWithNewPosts> dtoMap = new HashMap<>();
 		for (Post post : newPosts) {
 			ThreadWithNewPosts dto = dtoMap.get(post.getThread().getId());
@@ -54,4 +70,5 @@ public class ThreadsService {
 		Arrays.sort(result, ThreadWithNewPosts.COMPARATOR_LAST_POST_DESCENDING);
 		return result;
 	}
+	
 }

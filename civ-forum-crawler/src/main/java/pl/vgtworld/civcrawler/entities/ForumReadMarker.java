@@ -11,15 +11,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "forum_read_markers")
+@NamedQueries({
+	@NamedQuery(name=ForumReadMarker.QUERY_LAST_FOR_USER,
+		query="SELECT m.readAt FROM ForumReadMarker m WHERE m.user.id = :userId ORDER BY m.id DESC")
+})
 public class ForumReadMarker {
 	
 	public enum Executions {
 		MANUAL, AUTOMATIC
 	}
+	
+	public static final String QUERY_LAST_FOR_USER = "ForumReadMarker.lastForUser";
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

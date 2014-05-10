@@ -39,3 +39,12 @@ CONSTRAINT `post_author_id_fkey` FOREIGN KEY (`author_id`) REFERENCES `authors` 
 	ON DELETE CASCADE ON UPDATE CASCADE
 )engine=innodb;
 
+CREATE TABLE `forum_read_markers` (
+`id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`user_id` INT UNSIGNED NOT NULL,
+`read_at` DATETIME NOT NULL,
+`execution` ENUM("manual","automatic") NOT NULL,
+CONSTRAINT `forum_read_marker_user_id_fkey` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+	ON DELETE CASCADE ON UPDATE CASCADE,
+INDEX (`read_at`)
+)engine=innodb;

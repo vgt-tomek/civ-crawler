@@ -21,6 +21,11 @@ public class Post {
 	
 	public static final String QUERY_FIND_NEW_SINCE = "Post.findNewSince";
 	
+	public static final String NATIVE_QUERY_FIND_UNREAD = "SELECT  p.* "
+		+ "FROM posts p "
+		+ "WHERE p.created_at > :date "
+		+ "ORDER BY p.id ASC";
+	
 	@Id
 	private int id;
 	

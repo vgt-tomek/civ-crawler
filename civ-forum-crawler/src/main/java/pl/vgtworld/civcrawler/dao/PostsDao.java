@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import pl.vgtworld.civcrawler.entities.Post;
+import pl.vgtworld.civcrawler.entities.User;
 
 @Stateless
 public class PostsDao {
@@ -30,5 +31,13 @@ public class PostsDao {
 		query.setParameter("date", date);
 		List<Post> results = query.getResultList();
 		return results.toArray(new Post[results.size()]);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Post[] findUnread(User user, Date sinceDate) {
+		Query query = em.createNativeQuery(Post.NATIVE_QUERY_FIND_UNREAD, Post.class);
+		query.setParameter("date", sinceDate);
+		List<Post> result = query.getResultList();
+		return result.toArray(new Post[result.size()]);
 	}
 }
