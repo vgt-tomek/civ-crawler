@@ -45,7 +45,7 @@ public class Crawler {
 	
 	private ThreadParser threadParser = new ThreadParser();
 	
-	@Schedule(persistent=false, second="0", minute="*/3", hour="*")
+	@Schedule(persistent=false, second="0", minute="*/5", hour="*")
 	public void searchNewPosts() {
 		try {
 			LOGGER.info("Start searching new posts.");
