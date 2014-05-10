@@ -41,6 +41,10 @@ public class UsersService {
 		}
 	}
 	
+	public User findById(int userId) {
+		return usersDao.findById(userId);
+	}
+	
 	public User findByLogin(String login) {
 		return usersDao.findByLogin(login);
 	}
@@ -90,4 +94,5 @@ public class UsersService {
 		}
 		return null;
 	}
+
 }
