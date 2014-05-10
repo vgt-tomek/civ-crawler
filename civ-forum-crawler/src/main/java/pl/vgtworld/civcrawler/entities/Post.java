@@ -7,11 +7,19 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "posts")
+@NamedQueries({
+		@NamedQuery(name = Post.QUERY_FIND_NEW_SINCE,
+			query = "SELECT p FROM Post p WHERE p.createdAt >= :date ORDER BY p.createdAt ASC")
+})
 public class Post {
+	
+	public static final String QUERY_FIND_NEW_SINCE = "Post.findNewSince";
 	
 	@Id
 	private int id;
