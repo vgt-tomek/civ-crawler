@@ -1,5 +1,6 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <t:basic pageTitle="Home">
 	<h1>Home</h1>
@@ -15,7 +16,9 @@
 		<tr>
 			<td><a href="${thread.url}"><c:out value="${thread.name}" /></a></td>
 			<td>${thread.newPostCount}</td>
-			<td>${thread.lastPostTimestamp} by <c:out value="${thread.lastPostUserName}" />
+			<td>
+				<span class="date"><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${thread.lastPostTimestamp}" /></span>
+				by <c:out value="${thread.lastPostUserName}" />
 			</td>
 		</tr>
 		</c:forEach>
