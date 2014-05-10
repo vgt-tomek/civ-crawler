@@ -16,8 +16,11 @@ public class Post {
 	@Id
 	private int id;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Thread thread;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Author author;
 	
 	private int page;
 	
@@ -38,6 +41,14 @@ public class Post {
 	
 	public void setThread(Thread thread) {
 		this.thread = thread;
+	}
+	
+	public Author getAuthor() {
+		return author;
+	}
+	
+	public void setAuthor(Author author) {
+		this.author = author;
 	}
 	
 	public int getPage() {

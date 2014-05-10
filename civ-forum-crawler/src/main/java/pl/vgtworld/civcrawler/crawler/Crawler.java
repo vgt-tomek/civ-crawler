@@ -12,6 +12,7 @@ import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import pl.vgtworld.civcrawler.entities.Author;
 import pl.vgtworld.civcrawler.entities.Post;
 import pl.vgtworld.civcrawler.entities.Thread;
 import pl.vgtworld.civcrawler.parsers.ParseException;
@@ -19,6 +20,7 @@ import pl.vgtworld.civcrawler.parsers.PostDto;
 import pl.vgtworld.civcrawler.parsers.ThreadDto;
 import pl.vgtworld.civcrawler.parsers.ThreadParser;
 import pl.vgtworld.civcrawler.parsers.TodayPostsParser;
+import pl.vgtworld.civcrawler.services.AuthorsService;
 import pl.vgtworld.civcrawler.services.PostsService;
 import pl.vgtworld.civcrawler.services.ThreadsService;
 
@@ -38,6 +40,9 @@ public class Crawler {
 	
 	@Inject
 	private ThreadsService threadsService;
+	
+	@Inject
+	private AuthorsService authorsService;
 	
 	private ThreadParser threadParser = new ThreadParser();
 	
@@ -75,9 +80,17 @@ public class Crawler {
 			thread.setId(threadDto.getThreadId());
 			thread.setTitle(threadDto.getTitle());
 		}
+		Author author = authorsService.findById(postDto.getUserId());
+		if (author == null) {
+			LOGGER.debug("Author #{} doesn't exist. Creating new.", postDto.getUserId());
+			author = new Author();
+			author.setId(postDto.getUserId());
+			author.setName(postDto.getUserName());
+		}
 		Post post = new Post();
 		post.setId(postDto.getMessageId());
 		post.setThread(thread);
+		post.setAuthor(author);
 		post.setPage(threadDto.getPage());
 		post.setCreatedAt(new Date());
 		LOGGER.debug("Creating post #{}", postDto.getMessageId());

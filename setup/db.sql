@@ -22,12 +22,20 @@ CREATE TABLE `threads` (
 `title` VARCHAR(255) NOT NULL
 )engine=innodb;
 
+CREATE TABLE `authors` (
+`id` INT UNSIGNED NOT NULL PRIMARY KEY,
+`name` VARCHAR(255) NOT NULL
+)engine=innodb;
+
 CREATE TABLE `posts` (
 `id` INT UNSIGNED NOT NULL PRIMARY KEY,
 `thread_id` INT UNSIGNED NOT NULL,
+`author_id` INT UNSIGNED NOT NULL,
 `page` INT UNSIGNED NOT NULL,
 `created_at` DATETIME NOT NULL,
 CONSTRAINT `post_thread_id_fkey` FOREIGN KEY (`thread_id`) REFERENCES `threads` (`id`)
+	ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT `post_author_id_fkey` FOREIGN KEY (`author_id`) REFERENCES `authors` (`id`)
 	ON DELETE CASCADE ON UPDATE CASCADE
 )engine=innodb;
 
