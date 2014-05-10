@@ -2,7 +2,6 @@ package pl.vgtworld.civcrawler.crawler;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Schedule;
@@ -29,7 +28,7 @@ public class Crawler {
 	
 	private static final String HOST = "http://forums.civ.org.pl/";
 	
-	private static final String TODAY_POSTS_URL = HOST + "search.php?action=viewtoday";
+	private static final String TODAY_POSTS_URL = HOST + "search.php?action=viewtoday&lang=Eng";
 	
 	private static final String THREAD_URL = HOST + "misc.php?action=gotomsg&MsgID=%1$d";
 	
@@ -92,7 +91,7 @@ public class Crawler {
 		post.setThread(thread);
 		post.setAuthor(author);
 		post.setPage(threadDto.getPage());
-		post.setCreatedAt(new Date());
+		post.setCreatedAt(postDto.getCreatedAt());
 		LOGGER.debug("Creating post #{}", postDto.getMessageId());
 		postsService.add(post);
 	}
