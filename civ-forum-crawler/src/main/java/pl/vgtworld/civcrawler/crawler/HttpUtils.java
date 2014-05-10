@@ -13,7 +13,7 @@ public abstract class HttpUtils {
 			URL url = new URL(address);
 			String line = null;
 			StringBuilder builder = new StringBuilder();
-			in = new BufferedReader(new InputStreamReader(url.openStream()));
+			in = new BufferedReader(new InputStreamReader(url.openStream(), "ISO-8859-2"));
 			while ((line = in.readLine()) != null) {
 				builder.append(line);
 			}
