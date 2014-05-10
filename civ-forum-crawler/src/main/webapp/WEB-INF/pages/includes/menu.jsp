@@ -12,4 +12,7 @@
 		<li><a href="<%= request.getContextPath() %>/login">Login</a></li>
 		<li><a href="<%= request.getContextPath() %>/register">Register</a></li>
 	</c:if>
+	<c:if test="${user != null}">
+		<li><a href="<%= request.getContextPath() %>/view-unread">Unread posts</a></li>
+	</c:if>
 </ul>
