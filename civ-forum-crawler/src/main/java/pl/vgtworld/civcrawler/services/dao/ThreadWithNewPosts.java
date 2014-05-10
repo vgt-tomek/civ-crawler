@@ -1,8 +1,19 @@
 package pl.vgtworld.civcrawler.services.dao;
 
+import java.util.Comparator;
 import java.util.Date;
 
 public class ThreadWithNewPosts {
+	
+	public static final Comparator<ThreadWithNewPosts> COMPARATOR_LAST_POST_DESCENDING = new Comparator<ThreadWithNewPosts>() {
+
+		@Override
+		public int compare(ThreadWithNewPosts o1, ThreadWithNewPosts o2) {
+			long difference = o2.getLastPostTimestamp().getTime() - o1.getLastPostTimestamp().getTime();
+			return (int)difference;
+		}
+		
+	};
 	
 	private String name;
 	

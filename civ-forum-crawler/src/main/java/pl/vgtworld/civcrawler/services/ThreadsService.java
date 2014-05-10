@@ -1,5 +1,6 @@
 package pl.vgtworld.civcrawler.services;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -49,6 +50,8 @@ public class ThreadsService {
 			dto.addPost(post.getCreatedAt());
 		}
 		
-		return dtoMap.values().toArray(new ThreadWithNewPosts[dtoMap.size()]);
+		ThreadWithNewPosts[] result = dtoMap.values().toArray(new ThreadWithNewPosts[dtoMap.size()]);
+		Arrays.sort(result, ThreadWithNewPosts.COMPARATOR_LAST_POST_DESCENDING);
+		return result;
 	}
 }
