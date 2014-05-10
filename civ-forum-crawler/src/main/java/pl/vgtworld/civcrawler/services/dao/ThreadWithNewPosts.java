@@ -17,6 +17,8 @@ public class ThreadWithNewPosts {
 	
 	private String name;
 	
+	private String board;
+	
 	private int messageId;
 	
 	private int newPostCount;
@@ -26,12 +28,24 @@ public class ThreadWithNewPosts {
 	private String lastPostUserName;
 	
 	public ThreadWithNewPosts(String name, int messageId) {
-		this.name = name;
+		int index = name.lastIndexOf(">");
+		if (index < 0) {
+			this.name = name;
+			board = "";
+		} else {
+			int otherIndex = name.indexOf(">") < 0 ? 0 : name.indexOf(">");
+			this.name = name.substring(index + 2);
+			board = name.substring(otherIndex + 2, index - 1);
+		}
 		this.messageId = messageId;
 	}
 	
 	public String getName() {
 		return name;
+	}
+	
+	public String getBoard() {
+		return board;
 	}
 	
 	public int getMessageId() {

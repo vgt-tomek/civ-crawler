@@ -9,12 +9,14 @@
 	<table>
 		<tr>
 			<th>Thread</th>
+			<th>Board</th>
 			<th>New posts</th>
 			<th>Last post</th>
 		</tr>
 		<c:forEach items="${threads}" var="thread">
 		<tr>
 			<td><a href="${thread.url}"><c:out value="${thread.name}" /></a></td>
+			<td>${thread.board}</td>
 			<td>${thread.newPostCount}</td>
 			<td>
 				<span class="date"><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${thread.lastPostTimestamp}" /></span>
