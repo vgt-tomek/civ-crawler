@@ -9,7 +9,7 @@ import org.junit.Test;
 public class TodayPostsParserTest {
 
 	@Test
-	public void shouldFindPostsInExamplePage() throws IOException {
+	public void shouldFindPostsInExamplePage() throws IOException, ParseException {
 		TodayPostsParser parser = new TodayPostsParser();
 		String page = PageLoader.load("/todayPosts.txt");
 		
