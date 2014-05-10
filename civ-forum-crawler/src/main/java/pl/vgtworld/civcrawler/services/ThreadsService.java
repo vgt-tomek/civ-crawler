@@ -47,7 +47,7 @@ public class ThreadsService {
 				dto = new ThreadWithNewPosts(post.getThread().getTitle(), post.getId());
 				dtoMap.put(post.getThread().getId(), dto);
 			}
-			dto.addPost(post.getCreatedAt());
+			dto.addPost(post.getCreatedAt(), post.getAuthor().getName());
 		}
 		
 		ThreadWithNewPosts[] result = dtoMap.values().toArray(new ThreadWithNewPosts[dtoMap.size()]);

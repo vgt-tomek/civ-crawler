@@ -6,11 +6,11 @@ import java.util.Date;
 public class ThreadWithNewPosts {
 	
 	public static final Comparator<ThreadWithNewPosts> COMPARATOR_LAST_POST_DESCENDING = new Comparator<ThreadWithNewPosts>() {
-
+		
 		@Override
 		public int compare(ThreadWithNewPosts o1, ThreadWithNewPosts o2) {
 			long difference = o2.getLastPostTimestamp().getTime() - o1.getLastPostTimestamp().getTime();
-			return (int)difference;
+			return (int) difference;
 		}
 		
 	};
@@ -22,6 +22,8 @@ public class ThreadWithNewPosts {
 	private int newPostCount;
 	
 	private Date lastPostTimestamp;
+	
+	private String lastPostUserName;
 	
 	public ThreadWithNewPosts(String name, int messageId) {
 		this.name = name;
@@ -44,13 +46,22 @@ public class ThreadWithNewPosts {
 		return lastPostTimestamp;
 	}
 	
-	public void addPost(Date date) {
+	public void addPost(Date date, String userName) {
 		++newPostCount;
 		lastPostTimestamp = date;
+		lastPostUserName = userName;
 	}
 	
 	public String getUrl() {
 		return "http://forums.civ.org.pl/misc.php?action=gotomsg&MsgID=" + messageId;
+	}
+	
+	public String getLastPostUserName() {
+		return lastPostUserName;
+	}
+	
+	public void setLastPostUserName(String lastPostUserName) {
+		this.lastPostUserName = lastPostUserName;
 	}
 	
 }

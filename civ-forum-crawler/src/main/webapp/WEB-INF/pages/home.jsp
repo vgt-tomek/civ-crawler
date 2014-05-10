@@ -15,7 +15,8 @@
 		<tr>
 			<td><a href="${thread.url}"><c:out value="${thread.name}" /></a></td>
 			<td>${thread.newPostCount}</td>
-			<td>${thread.lastPostTimestamp}</td>
+			<td>${thread.lastPostTimestamp} by <c:out value="${thread.lastPostUserName}" />
+			</td>
 		</tr>
 		</c:forEach>
 	</table>
