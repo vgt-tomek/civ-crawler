@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,6 +21,7 @@ public class TodayPostsParser {
 	
 	public PostDto[] parse(String page) throws ParseException {
 		try {
+			df.setTimeZone(TimeZone.getTimeZone("GMT+1"));
 			List<PostDto> posts = new ArrayList<>();
 			
 			Pattern pattern = Pattern.compile(PATTERN);
