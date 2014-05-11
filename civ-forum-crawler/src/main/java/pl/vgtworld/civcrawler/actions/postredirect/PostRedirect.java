@@ -13,7 +13,9 @@ import org.slf4j.LoggerFactory;
 
 import pl.vgtworld.civcrawler.core.CivServlet;
 import pl.vgtworld.civcrawler.entities.Post;
+import pl.vgtworld.civcrawler.entities.User;
 import pl.vgtworld.civcrawler.services.PostsService;
+import pl.vgtworld.civcrawler.services.ThreadReadMarkersService;
 
 @WebServlet("/post-redirect")
 public class PostRedirect extends CivServlet {
@@ -25,8 +27,16 @@ public class PostRedirect extends CivServlet {
 	@Inject
 	private PostsService postsService;
 	
+	@Inject
+	private ThreadReadMarkersService threadReadService;
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		User user = getLoggedUser(req);
+		if (user == null) {
+			//TODO Display proper message for visitor.
+			return;
+		}
 		String messageIdentifier = req.getParameter("messageId");
 		int messageId = parseMessageId(messageIdentifier);
 		Post post = postsService.findById(messageId);
@@ -34,6 +44,8 @@ public class PostRedirect extends CivServlet {
 			//TODO Display proper error page.
 			return;
 		}
+		
+		threadReadService.markThreadRead(user.getId(), post.getThread().getId());
 		
 		resp.setStatus(HttpServletResponse.SC_MOVED_TEMPORARILY);
 		resp.setHeader("Location", "http://forums.civ.org.pl/misc.php?action=gotomsg&MsgID=" + messageId);
