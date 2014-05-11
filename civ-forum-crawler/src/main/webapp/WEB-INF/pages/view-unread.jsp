@@ -6,7 +6,7 @@
 	<h1>Unread posts</h1>
 	
 	<c:if test="${fn:length(threads) > 0}">
-	<a href="${pageContext.request.contextPath}/mark-forum-read">Mark all read</a>
+	<a href="/mark-forum-read">Mark all read</a>
 	<t:threads threads="${threads}" />
 	</c:if>
 	

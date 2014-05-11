@@ -31,6 +31,6 @@ public class MarkForumRead extends CivServlet {
 		}
 		
 		service.markForumRead(user.getId(), Executions.MANUAL);
-		resp.sendRedirect(req.getContextPath() + "/view-unread?markRead=true");
+		resp.sendRedirect("/view-unread?markRead=true");
 	}
 }

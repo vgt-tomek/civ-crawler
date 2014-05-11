@@ -4,6 +4,6 @@
 	
 	<p class="message-info">
 		You need to be logged in to view this content.
-		<a href="${pageContext.request.contextPath}/login">Go to login form.</a>
+		<a href="/login">Go to login form.</a>
 	</p>
 </t:basic>

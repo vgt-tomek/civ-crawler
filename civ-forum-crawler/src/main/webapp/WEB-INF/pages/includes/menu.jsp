@@ -2,12 +2,12 @@
 <c:if test="${user != null}">
 <div class="user">
 	Logged as <c:out value="${user.login}" />
-	(<a href="${pageContext.request.contextPath}/logout">Logout</a>)
+	(<a href="/logout">Logout</a>)
 </div>
 </c:if>
 
 <c:if test="${user == null && hideTopLoginForm != true}">
-<form class="user-login-form" method="POST" action="${pageContext.request.contextPath}/login">
+<form class="user-login-form" method="POST" action="/login">
 	<label for="loginform-login">Login:</label>
 	<input id="loginform-login" type="text" name="login" value="" />
 	<label for="loginform-password">Password:</label>
@@ -17,14 +17,14 @@
 </c:if>
 
 <ul id="main-menu">
-	<li><a href="${pageContext.request.contextPath}/">Home</a></li>
+	<li><a href="/">Home</a></li>
 	
 	<c:if test="${user == null}">
-		<li><a href="${pageContext.request.contextPath}/login">Login</a></li>
-		<li><a href="${pageContext.request.contextPath}/register">Register</a></li>
+		<li><a href="/login">Login</a></li>
+		<li><a href="/register">Register</a></li>
 	</c:if>
 	
 	<c:if test="${user != null}">
-		<li><a href="${pageContext.request.contextPath}/view-unread">Unread posts</a></li>
+		<li><a href="/view-unread">Unread posts</a></li>
 	</c:if>
 </ul>

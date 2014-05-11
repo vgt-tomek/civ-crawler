@@ -3,7 +3,7 @@
 <%@attribute name="header" fragment="true"%>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="./css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/css/style.css" />
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<title>${pageTitle}</title>
 </head>
