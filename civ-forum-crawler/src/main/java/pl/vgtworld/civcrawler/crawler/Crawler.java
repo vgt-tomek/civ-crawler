@@ -61,7 +61,7 @@ public class Crawler {
 			}
 			LOGGER.info("Searching new posts finished successfully.");
 		} catch (IOException e) {
-			LOGGER.error("Error while trying to download html page.", e);
+			LOGGER.warn("Error while trying to download html page ({}).", e.getMessage());
 		} catch (ParseException e) {
 			LOGGER.error("Error while trying to parse html page.", e);
 		}
@@ -69,6 +69,12 @@ public class Crawler {
 
 	private void storePostInDatabase(PostDto postDto) throws IOException, ParseException {
 		String threadUrl = String.format(THREAD_URL, postDto.getMessageId());
+		try {
+			LOGGER.debug("Sleep(1000)");
+			java.lang.Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			LOGGER.warn("Failed to sleep before downloading page.");
+		}
 		String threadPage = HttpUtils.downloadUrl(threadUrl);
 		ThreadDto threadDto = threadParser.parse(threadPage);
 		
