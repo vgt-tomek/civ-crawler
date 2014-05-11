@@ -25,7 +25,8 @@ public class MarkForumRead extends CivServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		User user = getLoggedUser(req);
 		if (user == null) {
-			//TODO Display proper message for visitor.
+			resp.setStatus(403);
+			render("errors/not-logged", req, resp);
 			return;
 		}
 		

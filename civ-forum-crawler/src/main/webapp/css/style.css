@@ -101,9 +101,9 @@ form.default > div > input[type=password] {
 }
 form.default > div.errors > p.error {
 	padding:10px;
-	border:solid 1px #FF0000;
+	border:solid 1px #990000;
 	background-color:#FFCCCC;
-	color:#FF0000;
+	color:#990000;
 	font-weight:bold;
 }
 
@@ -113,6 +113,14 @@ p.message-info {
 	padding:10px;
 	border:solid 1px #000000;
 	background-color:#DCD7CD;
+}
+p.message-error {
+	margin: 0px 0px 10px;
+	padding:10px;
+	border:solid 1px #990000;
+	background-color:#FFCCCC;
+	color:#990000;
+	font-weight:bold;
 }
 
 

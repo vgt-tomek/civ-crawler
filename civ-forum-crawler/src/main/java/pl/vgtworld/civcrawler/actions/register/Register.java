@@ -57,8 +57,11 @@ public class Register extends CivServlet {
 				LOGGER.info("New user ({}) registered.", login);
 				render(REGISTER_SUCCESS_VIEW, req, resp);
 			} catch (UsersServiceException e) {
-				LOGGER.error("Unexpected exception while trying to register new user.", e);
-				//TODO display proper error page
+				String message = "Unexpected error while trying to register new user.";
+				LOGGER.error(message, e);
+				req.setAttribute("message", message);
+				resp.setStatus(500);
+				render("errors/error-message", req, resp);
 			}
 		} else {
 			req.setAttribute("errors", validator.getErrors());

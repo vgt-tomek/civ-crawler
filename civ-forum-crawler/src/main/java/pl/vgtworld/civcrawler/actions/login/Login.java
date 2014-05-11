@@ -45,8 +45,11 @@ public class Login extends CivServlet {
 				usersService.login(login, (HttpServletRequest) req, (HttpServletResponse) resp);
 				render("login-success", req, resp);
 			} catch (UsersServiceException e) {
-				LOGGER.error("Unexpected exception while trying to login user.", e);
-				// TODO display proper error page
+				String message = "Unexpected error while trying to login user.";
+				LOGGER.error(message, e);
+				req.setAttribute("message", message);
+				resp.setStatus(500);
+				render("errors/error-message", req, resp);
 			}
 		} else {
 			LOGGER.info("Failed login attempt for user {} from ip {}.", login, req.getRemoteAddr());
