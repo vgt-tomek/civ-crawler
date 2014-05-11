@@ -36,7 +36,7 @@ public class ViewUnread extends CivServlet {
 		
 		ThreadWithNewPosts[] threads = service.findWithUnreadPosts(loggedUser);
 		
-		if (threads.length == 0) {
+		if (threads.length == 0 && req.getParameter("markRead") == null) {
 			forumReadService.markForumRead(loggedUser.getId(), Executions.AUTOMATIC);
 		}
 		
