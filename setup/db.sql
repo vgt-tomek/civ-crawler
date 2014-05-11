@@ -48,3 +48,16 @@ CONSTRAINT `forum_read_marker_user_id_fkey` FOREIGN KEY (`user_id`) REFERENCES `
 	ON DELETE CASCADE ON UPDATE CASCADE,
 INDEX (`read_at`)
 )engine=innodb;
+
+CREATE TABLE `thread_read_markers` (
+`id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`user_id` INT UNSIGNED NOT NULL,
+`thread_id` INT UNSIGNED NOT NULL,
+`read_at` DATETIME NOT NULL,
+CONSTRAINT `thread_read_marker_user_id_fkey` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+	ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT `thread_read_marker_thread_id_fkey` FOREIGN KEY (`thread_id`) REFERENCES `threads` (`id`)
+	ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT `unique_user_id_thread_id` UNIQUE(`user_id`, `thread_id`)
+)engine=innodb;
+
