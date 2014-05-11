@@ -47,7 +47,7 @@ public class Login extends CivServlet {
 				// TODO display proper error page
 			}
 		} else {
-			LOGGER.info("Failed login attempt for user {}.", login);
+			LOGGER.info("Failed login attempt for user {} from ip {}.", login, req.getRemoteAddr());
 			req.setAttribute("errors", validator.getErrors());
 			req.setAttribute("dto", dto);
 			render("login", req, resp);
