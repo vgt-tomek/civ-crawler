@@ -36,11 +36,13 @@ public class Register extends CivServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		hideTopLoginForm(req);
 		render(REGISTER_VIEW, req, resp);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		hideTopLoginForm(req);
 		String login = req.getParameter("login");
 		String password = req.getParameter("password");
 		String passwordRepeat = req.getParameter("password-repeat");

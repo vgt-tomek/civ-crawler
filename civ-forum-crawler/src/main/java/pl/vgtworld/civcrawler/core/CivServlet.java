@@ -17,6 +17,10 @@ public abstract class CivServlet extends HttpServlet {
 		return (User) req.getAttribute("user");
 	}
 	
+	protected void hideTopLoginForm(HttpServletRequest req) {
+		req.setAttribute("hideTopLoginForm", true);
+	}
+	
 	protected void render(String view, HttpServletRequest req, HttpServletResponse resp)
 		throws ServletException, IOException {
 		req.getRequestDispatcher("/WEB-INF/pages/" + view + ".jsp").forward(req, resp);

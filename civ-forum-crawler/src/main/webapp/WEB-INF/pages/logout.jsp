@@ -3,5 +3,5 @@
 <t:basic pageTitle="Logout">
 	<h1>Logout</h1>
 	
-	<p>Logged out successfully.</p>
+	<p class="message-info">Logged out successfully.</p>
 </t:basic>

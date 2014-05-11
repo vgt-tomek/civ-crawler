@@ -16,7 +16,7 @@
 		<jsp:doBody />
 	</div>
 	<div id="footer">
-		<p class="copyright">Copyright &copy; 2014 - <a href="http://vgtworld.pl">VGT</a></p>
+		<p class="copyright"><a href="http://vgtworld.pl">VGT</a> 2014</p>
 	</div>
 </body>
 </html>

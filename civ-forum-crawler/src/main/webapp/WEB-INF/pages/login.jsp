@@ -4,7 +4,7 @@
 <t:basic pageTitle="Login">
 	<h1>Login</h1>
 	
-	<form method="POST" action="login">
+	<form class="default" method="POST" action="login">
 		<div class="errors">
 			<c:forEach items="${errors}" var="errorMessage">
 				<p class="error">${errorMessage}</p>

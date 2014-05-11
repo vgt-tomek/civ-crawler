@@ -3,5 +3,5 @@
 <t:basic pageTitle="Home">
 	<h1>Login</h1>
 	
-	<p>Logged successfully.</p>
+	<p class="message-info">Logged successfully.</p>
 </t:basic>

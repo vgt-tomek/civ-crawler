@@ -3,5 +3,5 @@
 <t:basic pageTitle="Home">
 	<h1>Register</h1>
 	
-	<p>Account created successfully.</p>
+	<p class="message-info">Account created successfully.</p>
 </t:basic>

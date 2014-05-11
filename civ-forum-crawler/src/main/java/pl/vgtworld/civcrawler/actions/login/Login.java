@@ -27,11 +27,13 @@ public class Login extends CivServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		hideTopLoginForm(req);
 		render("login", req, resp);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		hideTopLoginForm(req);
 		String login = req.getParameter("login");
 		String password = req.getParameter("password");
 		LoginFormDto dto = new LoginFormDto(login, password);
