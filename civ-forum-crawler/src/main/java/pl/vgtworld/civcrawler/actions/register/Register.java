@@ -12,6 +12,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import pl.vgtworld.civcrawler.core.CivServlet;
+import pl.vgtworld.civcrawler.entities.User;
+import pl.vgtworld.civcrawler.services.ForumReadMarkersService;
 import pl.vgtworld.civcrawler.services.UsersService;
 import pl.vgtworld.civcrawler.services.UsersServiceException;
 
@@ -29,6 +31,9 @@ public class Register extends CivServlet {
 	@Inject
 	UsersService usersService;
 	
+	@Inject
+	private ForumReadMarkersService forumReadService;
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		render(REGISTER_VIEW, req, resp);
@@ -45,9 +50,10 @@ public class Register extends CivServlet {
 		boolean validationResult = validator.validate(dto, usersService);
 		if (validationResult) {
 			try {
-				usersService.createNewUser(dto);
-				render(REGISTER_SUCCESS_VIEW, req, resp);
+				User user = usersService.createNewUser(dto);
+				forumReadService.createInitialForumReadMarker(user.getId());
 				LOGGER.info("New user ({}) registered.", login);
+				render(REGISTER_SUCCESS_VIEW, req, resp);
 			} catch (UsersServiceException e) {
 				LOGGER.error("Unexpected exception while trying to register new user.", e);
 				//TODO display proper error page

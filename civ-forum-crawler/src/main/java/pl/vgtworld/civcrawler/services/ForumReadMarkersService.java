@@ -1,6 +1,8 @@
 package pl.vgtworld.civcrawler.services;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -18,6 +20,17 @@ public class ForumReadMarkersService {
 	
 	@Inject
 	private UsersService usersDao;
+	
+	public void createInitialForumReadMarker(int userId) {
+		User user = usersDao.findById(userId);
+		Calendar cal = new GregorianCalendar();
+		cal.add(Calendar.HOUR, -24);
+		ForumReadMarker marker = new ForumReadMarker();
+		marker.setUser(user);
+		marker.setReadAt(cal.getTime());
+		marker.setExecution(Executions.AUTOMATIC);
+		markersDao.add(marker);
+	}
 	
 	public void markForumRead(int userId, Executions executionType) {
 		User user = usersDao.findById(userId);

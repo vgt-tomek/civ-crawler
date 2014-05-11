@@ -26,7 +26,7 @@ public class UsersService {
 	@Inject
 	UserTokensDao userTokensDao;
 	
-	public void createNewUser(RegisterFormDto registerDto) throws UsersServiceException {
+	public User createNewUser(RegisterFormDto registerDto) throws UsersServiceException {
 		try {
 			User user = new User();
 			String salt = UserUtils.generateSalt();
@@ -36,6 +36,7 @@ public class UsersService {
 			user.setPassword(passwordHash);
 			user.setCreatedAt(new Date());
 			usersDao.add(user);
+			return user;
 		} catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
 			throw new UsersServiceException("Error while creating new user", e);
 		}
