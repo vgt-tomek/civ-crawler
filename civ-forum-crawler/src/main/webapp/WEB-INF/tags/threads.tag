@@ -12,7 +12,7 @@
 	</tr>
 	<c:forEach items="${threads}" var="thread">
 	<tr>
-		<td><a href="${thread.url}"><c:out value="${thread.name}" /></a></td>
+		<td><a href="${pageContext.request.contextPath}/post-redirect?messageId=${thread.messageId}"><c:out value="${thread.name}" /></a></td>
 		<td>${thread.board}</td>
 		<td>${thread.newPostCount}</td>
 		<td>

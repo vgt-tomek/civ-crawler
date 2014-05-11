@@ -66,10 +66,6 @@ public class ThreadWithNewPosts {
 		lastPostUserName = userName;
 	}
 	
-	public String getUrl() {
-		return "http://forums.civ.org.pl/misc.php?action=gotomsg&MsgID=" + messageId;
-	}
-	
 	public String getLastPostUserName() {
 		return lastPostUserName;
 	}
