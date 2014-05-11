@@ -20,7 +20,7 @@ import pl.vgtworld.civcrawler.services.UsersService;
 public class LoginFilter implements Filter {
 	
 	@Inject
-	UsersService usersService;
+	private UsersService usersService;
 	
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {

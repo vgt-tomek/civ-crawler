@@ -23,7 +23,7 @@ public class Login extends CivServlet {
 	private static final Logger LOGGER = LoggerFactory.getLogger(Login.class);
 	
 	@Inject
-	UsersService usersService;
+	private UsersService usersService;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -48,7 +48,7 @@ public class Login extends CivServlet {
 				String message = "Unexpected error while trying to login user.";
 				LOGGER.error(message, e);
 				req.setAttribute("message", message);
-				resp.setStatus(500);
+				resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
 				render("errors/error-message", req, resp);
 			}
 		} else {

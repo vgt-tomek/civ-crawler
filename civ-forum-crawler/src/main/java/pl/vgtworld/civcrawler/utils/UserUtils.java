@@ -5,7 +5,11 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class UserUtils {
+public abstract class UserUtils {
+	
+	private static final int RADIX = 16;
+
+	private static final int HASH_EXPECTED_LENGTH = 32;
 	
 	private static final String CHARSET_NAME = "UTF-8";
 	
@@ -28,8 +32,8 @@ public class UserUtils {
 		MessageDigest md = MessageDigest.getInstance("MD5");
 		byte[] result = md.digest(seed.getBytes(CHARSET_NAME));
 		BigInteger bigInt = new BigInteger(1, result);
-		String hashtext = bigInt.toString(16);
-		while (hashtext.length() < 32) {
+		String hashtext = bigInt.toString(RADIX);
+		while (hashtext.length() < HASH_EXPECTED_LENGTH) {
 			hashtext = "0" + hashtext;
 		}
 		return hashtext;

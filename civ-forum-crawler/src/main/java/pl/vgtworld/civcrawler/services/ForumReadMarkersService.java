@@ -15,6 +15,8 @@ import pl.vgtworld.civcrawler.entities.ForumReadMarker.Executions;
 @Stateless
 public class ForumReadMarkersService {
 	
+	private static final int HOURS_IN_PAST = 24;
+
 	@Inject
 	private ForumReadMarkersDao markersDao;
 	
@@ -24,7 +26,7 @@ public class ForumReadMarkersService {
 	public void createInitialForumReadMarker(int userId) {
 		User user = usersDao.findById(userId);
 		Calendar cal = new GregorianCalendar();
-		cal.add(Calendar.HOUR, -24);
+		cal.add(Calendar.HOUR, -HOURS_IN_PAST);
 		ForumReadMarker marker = new ForumReadMarker();
 		marker.setUser(user);
 		marker.setReadAt(cal.getTime());

@@ -34,7 +34,7 @@ public class PostRedirect extends CivServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		User user = getLoggedUser(req);
 		if (user == null) {
-			resp.setStatus(403);
+			resp.setStatus(HttpServletResponse.SC_FORBIDDEN);
 			render("errors/not-logged", req, resp);
 			return;
 		}
@@ -43,7 +43,7 @@ public class PostRedirect extends CivServlet {
 		Post post = postsService.findById(messageId);
 		if (post == null) {
 			req.setAttribute("message", "Post with specified ID does not exist.");
-			resp.setStatus(500);
+			resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
 			render("errors/error-message", req, resp);
 			return;
 		}

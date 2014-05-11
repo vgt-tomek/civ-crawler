@@ -17,6 +17,8 @@ import pl.vgtworld.civcrawler.services.dao.ThreadWithNewPosts;
 @WebServlet("/")
 public class Home extends CivServlet {
 	
+	private static final int HOURS_IN_PAST = 24;
+
 	private static final long serialVersionUID = 1L;
 	
 	@Inject
@@ -25,7 +27,7 @@ public class Home extends CivServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Calendar cal = new GregorianCalendar();
-		cal.add(Calendar.HOUR, -24);
+		cal.add(Calendar.HOUR, -HOURS_IN_PAST);
 		ThreadWithNewPosts[] threads = threadsService.findWithNewPostsSince(cal.getTime());
 		req.setAttribute("threads", threads);
 		

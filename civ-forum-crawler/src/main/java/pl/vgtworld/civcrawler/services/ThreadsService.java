@@ -25,13 +25,13 @@ public class ThreadsService {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ThreadsService.class);
 	
 	@Inject
-	ThreadsDao dao;
+	private ThreadsDao dao;
 	
 	@Inject
-	PostsDao postsDao;
+	private PostsDao postsDao;
 	
 	@Inject
-	ForumReadMarkersDao forumReadMarkersDao;
+	private ForumReadMarkersDao forumReadMarkersDao;
 	
 	public void add(Thread thread) {
 		dao.add(thread);

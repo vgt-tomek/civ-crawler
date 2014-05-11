@@ -29,7 +29,7 @@ public class Register extends CivServlet {
 	private static final Logger LOGGER = LoggerFactory.getLogger(Register.class);
 	
 	@Inject
-	UsersService usersService;
+	private UsersService usersService;
 	
 	@Inject
 	private ForumReadMarkersService forumReadService;
@@ -60,7 +60,7 @@ public class Register extends CivServlet {
 				String message = "Unexpected error while trying to register new user.";
 				LOGGER.error(message, e);
 				req.setAttribute("message", message);
-				resp.setStatus(500);
+				resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
 				render("errors/error-message", req, resp);
 			}
 		} else {

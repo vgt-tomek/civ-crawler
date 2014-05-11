@@ -26,6 +26,8 @@ import pl.vgtworld.civcrawler.services.ThreadsService;
 @Stateless
 public class Crawler {
 	
+	private static final int SLEEP_TIME = 1000;
+
 	private static final String HOST = "http://forums.civ.org.pl/";
 	
 	private static final String TODAY_POSTS_URL = HOST + "search.php?action=viewtoday&lang=Eng";
@@ -71,7 +73,7 @@ public class Crawler {
 		String threadUrl = String.format(THREAD_URL, postDto.getMessageId());
 		try {
 			LOGGER.debug("Sleep(1000)");
-			java.lang.Thread.sleep(1000);
+			java.lang.Thread.sleep(SLEEP_TIME);
 		} catch (InterruptedException e) {
 			LOGGER.warn("Failed to sleep before downloading page.");
 		}

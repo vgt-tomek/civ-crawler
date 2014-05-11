@@ -9,8 +9,7 @@ public class ThreadWithNewPosts {
 		
 		@Override
 		public int compare(ThreadWithNewPosts o1, ThreadWithNewPosts o2) {
-			long difference = o2.getLastPostTimestamp().getTime() - o1.getLastPostTimestamp().getTime();
-			return (int) difference;
+			return (int)(o2.getLastPostTimestamp().getTime() - o1.getLastPostTimestamp().getTime());
 		}
 		
 	};
@@ -28,12 +27,12 @@ public class ThreadWithNewPosts {
 	private String lastPostUserName;
 	
 	public ThreadWithNewPosts(String name, int messageId) {
-		int index = name.lastIndexOf(">");
+		int index = name.lastIndexOf('>');
 		if (index < 0) {
 			this.name = name;
 			board = "";
 		} else {
-			int otherIndex = name.indexOf(">") < 0 ? 0 : name.indexOf(">");
+			int otherIndex = name.indexOf('>') < 0 ? 0 : name.indexOf('>');
 			this.name = name.substring(index + 2);
 			board = name.substring(otherIndex + 2, index - 1);
 		}

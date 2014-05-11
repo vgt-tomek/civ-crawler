@@ -21,10 +21,10 @@ import pl.vgtworld.civcrawler.utils.UserUtils;
 public class UsersService {
 	
 	@Inject
-	UsersDao usersDao;
+	private UsersDao usersDao;
 	
 	@Inject
-	UserTokensDao userTokensDao;
+	private UserTokensDao userTokensDao;
 	
 	public User createNewUser(RegisterFormDto registerDto) throws UsersServiceException {
 		try {

@@ -13,6 +13,14 @@ import java.util.regex.Pattern;
 
 public class TodayPostsParser {
 	
+	private static final int MESSAGE_ID_EXPRESSION_INDEX = 1;
+
+	private static final int USER_ID_EXPRESSION_INDEX = 2;
+
+	private static final int USER_NAME_EXPRESSION_INDEX = 3;
+
+	private static final int CREATED_AT_EXPRESSION_INDEX = 4;
+
 	private static final String PATTERN = "misc\\.php\\?action=gotomsg&amp;MsgID=([0-9]+)"
 		+ ".*?member\\.php\\?action=viewprofile&amp;UserID=([0-9]+)\">(.*?)</a>"
 		+ ".*?<span class=\"date\">(.*?)</td>";
@@ -28,10 +36,10 @@ public class TodayPostsParser {
 			Matcher matcher = pattern.matcher(page);
 			while (matcher.find()) {
 				PostDto dto = new PostDto();
-				dto.setMessageId(Integer.parseInt(matcher.group(1)));
-				dto.setUserId(Integer.parseInt(matcher.group(2)));
-				dto.setUserName(matcher.group(3));
-				dto.setCreatedAt(parseDate(matcher.group(4)));
+				dto.setMessageId(Integer.parseInt(matcher.group(MESSAGE_ID_EXPRESSION_INDEX)));
+				dto.setUserId(Integer.parseInt(matcher.group(USER_ID_EXPRESSION_INDEX)));
+				dto.setUserName(matcher.group(USER_NAME_EXPRESSION_INDEX));
+				dto.setCreatedAt(parseDate(matcher.group(CREATED_AT_EXPRESSION_INDEX)));
 				posts.add(dto);
 			}
 			Collections.reverse(posts);

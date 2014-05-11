@@ -19,13 +19,13 @@ public class MarkForumRead extends CivServlet {
 	private static final long serialVersionUID = 1L;
 	
 	@Inject
-	ForumReadMarkersService service;
+	private ForumReadMarkersService service;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		User user = getLoggedUser(req);
 		if (user == null) {
-			resp.setStatus(403);
+			resp.setStatus(HttpServletResponse.SC_FORBIDDEN);
 			render("errors/not-logged", req, resp);
 			return;
 		}
