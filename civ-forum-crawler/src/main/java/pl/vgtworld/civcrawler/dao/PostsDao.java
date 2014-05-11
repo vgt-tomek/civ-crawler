@@ -37,6 +37,7 @@ public class PostsDao {
 	public Post[] findUnread(User user, Date sinceDate) {
 		Query query = em.createNativeQuery(Post.NATIVE_QUERY_FIND_UNREAD, Post.class);
 		query.setParameter("date", sinceDate);
+		query.setParameter("userId", user.getId());
 		List<Post> result = query.getResultList();
 		return result.toArray(new Post[result.size()]);
 	}

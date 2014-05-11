@@ -23,7 +23,11 @@ public class Post {
 	
 	public static final String NATIVE_QUERY_FIND_UNREAD = "SELECT  p.* "
 		+ "FROM posts p "
+		+ "LEFT JOIN thread_read_markers m "
+		+ "ON p.thread_id = m.thread_id "
 		+ "WHERE p.created_at > :date "
+		+ "AND (m.user_id IS NULL OR m.user_id = :userId) "
+		+ "AND (m.read_at IS NULL OR p.created_at > m.read_at) "
 		+ "ORDER BY p.id ASC";
 	
 	@Id
