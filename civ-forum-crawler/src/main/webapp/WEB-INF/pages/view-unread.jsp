@@ -7,7 +7,7 @@
 	
 	<c:if test="${fn:length(threads) > 0}">
 	<a href="/mark-forum-read">Mark all read</a>
-	<t:threads threads="${threads}" />
+	<t:threads threads="${threads}" directUrls="false" />
 	</c:if>
 	
 	<c:if test="${fn:length(threads) == 0}">

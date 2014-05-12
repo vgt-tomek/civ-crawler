@@ -3,6 +3,6 @@
 <t:basic pageTitle="Home">
 
 	<h1>Last 24 hours activity</h1>
-	<t:threads threads="${threads}" />
+	<t:threads threads="${threads}" directUrls="true" />
 	
 </t:basic>
