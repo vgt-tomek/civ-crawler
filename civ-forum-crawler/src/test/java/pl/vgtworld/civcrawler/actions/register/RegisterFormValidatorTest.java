@@ -20,6 +20,10 @@ public class RegisterFormValidatorTest {
 	
 	private static final String LONG_LOGIN = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxy";
 	
+	private static final String SAMPLE_VALID_LOGIN = "Valid login_123";
+	
+	private static final String SAMPLE_INVALID_LOGIN = "$ample invalid login-123";
+	
 	private static final String PASSWORD = "password";
 	
 	private static final String EMPTY_STRING = "";
@@ -172,6 +176,35 @@ public class RegisterFormValidatorTest {
 		assertThat(result).isFalse();
 		assertThat(errors).hasSize(1);
 		assertThat(errors[0]).isEqualTo(RegisterFormValidator.ErrorMessages.PASSWORD_MISMATCH.getMessage());
+	}
+	
+	@Test
+	public void shouldAcceptLoginWithValidCharacters() {
+		RegisterFormValidator validator = new RegisterFormValidator();
+		RegisterFormDto dto = createValidDto();
+		dto.setLogin(SAMPLE_VALID_LOGIN);
+		when(service.isLoginAvailable(anyString())).thenReturn(true);
+		
+		boolean result = validator.validate(dto, service);
+		String[] errors = validator.getErrors();
+		
+		assertThat(result).isTrue();
+		assertThat(errors).isEmpty();
+	}
+	
+	@Test
+	public void shouldNotAcceptLoginWithInvalidCharacters() {
+		RegisterFormValidator validator = new RegisterFormValidator();
+		RegisterFormDto dto = createValidDto();
+		dto.setLogin(SAMPLE_INVALID_LOGIN);
+		when(service.isLoginAvailable(anyString())).thenReturn(true);
+		
+		boolean result = validator.validate(dto, service);
+		String[] errors = validator.getErrors();
+		
+		assertThat(result).isFalse();
+		assertThat(errors).hasSize(1);
+		assertThat(errors[0]).isEqualTo(RegisterFormValidator.ErrorMessages.LOGIN_NOT_ALLOWED_CHARACTERS.getMessage());
 	}
 	
 	private RegisterFormDto createValidDto() {

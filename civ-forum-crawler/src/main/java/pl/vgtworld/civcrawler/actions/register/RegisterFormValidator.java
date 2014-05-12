@@ -2,6 +2,8 @@ package pl.vgtworld.civcrawler.actions.register;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import pl.vgtworld.civcrawler.services.UsersService;
 
@@ -12,6 +14,7 @@ class RegisterFormValidator {
 		LOGIN_TOO_SHORT("Login is too short. Minimum length: " + LOGIN_MIN_LENGTH + " characters."),
 		LOGIN_TOO_LONG("Login is too long. Maximum length: " + LOGIN_MAX_LENGTH + " characters."),
 		LOGIN_TAKEN("Login is already taken."),
+		LOGIN_NOT_ALLOWED_CHARACTERS("Some of characters used in login are not allowed."),
 		PASSWORD_REQUIRED("Password is required."),
 		PASSWORD_MISMATCH("Passwords doesn't match.");
 		
@@ -29,6 +32,8 @@ class RegisterFormValidator {
 	private static final int LOGIN_MIN_LENGTH = 3;
 	
 	private static final int LOGIN_MAX_LENGTH = 50;
+	
+	private static final String LOGIN_ALLOWED_CHARACTERS_PATTERN = "^[a-zA-Z0-9 _]+$";
 	
 	private List<String> validationErrors = new ArrayList<>();
 	
@@ -55,6 +60,12 @@ class RegisterFormValidator {
 		}
 		if (login.length() > LOGIN_MAX_LENGTH) {
 			validationErrors.add(ErrorMessages.LOGIN_TOO_LONG.getMessage());
+			return false;
+		}
+		Pattern pattern = Pattern.compile(LOGIN_ALLOWED_CHARACTERS_PATTERN);
+		Matcher matcher = pattern.matcher(login);
+		if (!matcher.find()) {
+			validationErrors.add(ErrorMessages.LOGIN_NOT_ALLOWED_CHARACTERS.getMessage());
 			return false;
 		}
 		if (!service.isLoginAvailable(login)) {
