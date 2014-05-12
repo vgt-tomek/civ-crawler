@@ -20,6 +20,7 @@ import pl.vgtworld.civcrawler.parsers.ThreadDto;
 import pl.vgtworld.civcrawler.parsers.ThreadParser;
 import pl.vgtworld.civcrawler.parsers.TodayPostsParser;
 import pl.vgtworld.civcrawler.services.AuthorsService;
+import pl.vgtworld.civcrawler.services.ForumScansService;
 import pl.vgtworld.civcrawler.services.PostsService;
 import pl.vgtworld.civcrawler.services.ThreadsService;
 
@@ -45,6 +46,9 @@ public class Crawler {
 	@Inject
 	private AuthorsService authorsService;
 	
+	@Inject
+	private ForumScansService forumScansService;
+	
 	private ThreadParser threadParser = new ThreadParser();
 	
 	@Schedule(persistent=false, second="0", minute="*/5", hour="*")
@@ -61,6 +65,7 @@ public class Crawler {
 			for (PostDto postDto : newPosts) {
 				storePostInDatabase(postDto);
 			}
+			forumScansService.saveScan(posts.length, newPosts.length);
 			LOGGER.info("Searching new posts finished successfully.");
 		} catch (IOException e) {
 			LOGGER.warn("Error while trying to download html page ({}).", e.getMessage());

@@ -61,3 +61,10 @@ CONSTRAINT `thread_read_marker_thread_id_fkey` FOREIGN KEY (`thread_id`) REFEREN
 CONSTRAINT `unique_user_id_thread_id` UNIQUE(`user_id`, `thread_id`)
 )engine=innodb;
 
+CREATE TABLE `forum_scans` (
+`id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`new_posts` INT UNSIGNED NOT NULL,
+`all_posts` INT UNSIGNED NOT NULL,
+`created_at` DATETIME NOT NULL,
+INDEX (`created_at`)
+)engine=innodb;
