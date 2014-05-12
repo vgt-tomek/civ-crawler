@@ -5,7 +5,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="/css/style.css" />
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<title>${pageTitle}</title>
+	<title>civ.org.pl forum crawler - ${pageTitle}</title>
 </head>
 <body>
 	<div id="header">
