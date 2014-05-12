@@ -52,7 +52,7 @@ public class Login extends CivServlet {
 				render("errors/error-message", req, resp);
 			}
 		} else {
-			LOGGER.info("Failed login attempt for user {} from ip {}.", login, req.getRemoteAddr());
+			LOGGER.info("Failed login attempt for user {} from ip {}.", login, getRemoteAddr(req));
 			req.setAttribute("errors", validator.getErrors());
 			req.setAttribute("dto", dto);
 			render("login", req, resp);

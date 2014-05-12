@@ -25,4 +25,12 @@ public abstract class CivServlet extends HttpServlet {
 		throws ServletException, IOException {
 		req.getRequestDispatcher("/WEB-INF/pages/" + view + ".jsp").forward(req, resp);
 	}
+	
+	protected String getRemoteAddr(HttpServletRequest req) {
+		String xForwardedFor = req.getHeader("X-Forwarded-For");
+		if (xForwardedFor != null) {
+			return xForwardedFor;
+		}
+		return req.getRemoteAddr();
+	}
 }
