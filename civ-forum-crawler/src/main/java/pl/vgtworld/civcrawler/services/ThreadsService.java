@@ -17,7 +17,7 @@ import pl.vgtworld.civcrawler.dao.ThreadsDao;
 import pl.vgtworld.civcrawler.entities.Post;
 import pl.vgtworld.civcrawler.entities.Thread;
 import pl.vgtworld.civcrawler.entities.User;
-import pl.vgtworld.civcrawler.services.dao.ThreadWithNewPosts;
+import pl.vgtworld.civcrawler.services.dto.ThreadWithNewPosts;
 
 @Stateless
 public class ThreadsService {

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import pl.vgtworld.civcrawler.core.CivServlet;
 import pl.vgtworld.civcrawler.services.ThreadsService;
-import pl.vgtworld.civcrawler.services.dao.ThreadWithNewPosts;
+import pl.vgtworld.civcrawler.services.dto.ThreadWithNewPosts;
 
 @WebServlet("/")
 public class Home extends CivServlet {

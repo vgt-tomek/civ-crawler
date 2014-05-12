@@ -1,4 +1,4 @@
-package pl.vgtworld.civcrawler.services.dao;
+package pl.vgtworld.civcrawler.services.dto;
 
 import java.util.Comparator;
 import java.util.Date;

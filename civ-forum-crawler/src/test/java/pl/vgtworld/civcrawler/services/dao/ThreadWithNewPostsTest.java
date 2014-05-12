@@ -4,6 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
 
+import pl.vgtworld.civcrawler.services.dto.ThreadWithNewPosts;
+
 public class ThreadWithNewPostsTest {
 
 	@Test

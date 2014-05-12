@@ -13,7 +13,7 @@ import pl.vgtworld.civcrawler.entities.ForumReadMarker.Executions;
 import pl.vgtworld.civcrawler.entities.User;
 import pl.vgtworld.civcrawler.services.ForumReadMarkersService;
 import pl.vgtworld.civcrawler.services.ThreadsService;
-import pl.vgtworld.civcrawler.services.dao.ThreadWithNewPosts;
+import pl.vgtworld.civcrawler.services.dto.ThreadWithNewPosts;
 
 @WebServlet("/view-unread")
 public class ViewUnread extends CivServlet {
