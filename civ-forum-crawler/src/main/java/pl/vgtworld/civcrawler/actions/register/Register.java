@@ -16,6 +16,7 @@ import pl.vgtworld.civcrawler.entities.User;
 import pl.vgtworld.civcrawler.services.ForumReadMarkersService;
 import pl.vgtworld.civcrawler.services.UsersService;
 import pl.vgtworld.civcrawler.services.UsersServiceException;
+import pl.vgtworld.civcrawler.services.dto.RegisterFormDto;
 
 @WebServlet("/register")
 public class Register extends CivServlet {

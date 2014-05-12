@@ -6,6 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import pl.vgtworld.civcrawler.services.UsersService;
+import pl.vgtworld.civcrawler.services.dto.RegisterFormDto;
 
 class RegisterFormValidator {
 	
@@ -54,6 +55,19 @@ class RegisterFormValidator {
 			validationErrors.add(ErrorMessages.LOGIN_REQUIRED.getMessage());
 			return false;
 		}
+		
+		if (!validateLoginLengthAndFormat(login)) {
+			return false;
+		}
+		
+		if (!service.isLoginAvailable(login)) {
+			validationErrors.add(ErrorMessages.LOGIN_TAKEN.getMessage());
+		}
+		
+		return true;
+	}
+
+	private boolean validateLoginLengthAndFormat(String login) {
 		if (login.length() < LOGIN_MIN_LENGTH) {
 			validationErrors.add(ErrorMessages.LOGIN_TOO_SHORT.getMessage());
 			return false;
@@ -68,10 +82,6 @@ class RegisterFormValidator {
 			validationErrors.add(ErrorMessages.LOGIN_NOT_ALLOWED_CHARACTERS.getMessage());
 			return false;
 		}
-		if (!service.isLoginAvailable(login)) {
-			validationErrors.add(ErrorMessages.LOGIN_TAKEN.getMessage());
-		}
-		
 		return true;
 	}
 	

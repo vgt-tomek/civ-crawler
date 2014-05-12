@@ -10,6 +10,7 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import pl.vgtworld.civcrawler.services.UsersService;
+import pl.vgtworld.civcrawler.services.dto.RegisterFormDto;
 
 @RunWith(MockitoJUnitRunner.class)
 public class RegisterFormValidatorTest {

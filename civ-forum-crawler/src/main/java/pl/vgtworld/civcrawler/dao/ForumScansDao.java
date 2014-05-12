@@ -13,7 +13,7 @@ import pl.vgtworld.civcrawler.entities.ForumScan;
 public class ForumScansDao {
 	
 	@PersistenceContext
-	EntityManager em;
+	private EntityManager em;
 	
 	public void add(ForumScan scan) {
 		em.persist(scan);

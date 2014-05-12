@@ -1,4 +1,4 @@
-package pl.vgtworld.civcrawler.actions.register;
+package pl.vgtworld.civcrawler.services.dto;
 
 public class RegisterFormDto {
 	

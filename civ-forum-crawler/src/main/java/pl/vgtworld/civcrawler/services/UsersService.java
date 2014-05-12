@@ -10,11 +10,11 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import pl.vgtworld.civcrawler.actions.register.RegisterFormDto;
 import pl.vgtworld.civcrawler.dao.UserTokensDao;
 import pl.vgtworld.civcrawler.dao.UsersDao;
 import pl.vgtworld.civcrawler.entities.User;
 import pl.vgtworld.civcrawler.entities.UserToken;
+import pl.vgtworld.civcrawler.services.dto.RegisterFormDto;
 import pl.vgtworld.civcrawler.utils.UserUtils;
 
 @Stateless
