@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import pl.vgtworld.civcrawler.core.CivServlet;
+import pl.vgtworld.civcrawler.entities.User;
 import pl.vgtworld.civcrawler.services.UsersService;
 import pl.vgtworld.civcrawler.services.UsersServiceException;
 
@@ -42,7 +43,8 @@ public class Login extends CivServlet {
 		boolean validationResult = validator.validate(dto, usersService);
 		if (validationResult) {
 			try {
-				usersService.login(login, (HttpServletRequest) req, (HttpServletResponse) resp);
+				User user = usersService.login(login, getRemoteAddr(req), resp);
+				req.setAttribute("user", user);
 				render("login-success", req, resp);
 			} catch (UsersServiceException e) {
 				String message = "Unexpected error while trying to login user.";

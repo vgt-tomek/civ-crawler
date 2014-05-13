@@ -7,7 +7,6 @@ import java.util.Date;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import pl.vgtworld.civcrawler.dao.UserTokensDao;
@@ -55,7 +54,7 @@ public class UsersService {
 		return user == null;
 	}
 	
-	public void login(String login, HttpServletRequest request, HttpServletResponse response)
+	public User login(String login, String remoteAddr, HttpServletResponse response)
 		throws UsersServiceException {
 		try {
 			User user = usersDao.findByLogin(login);
@@ -64,7 +63,7 @@ public class UsersService {
 			token.setUser(user);
 			token.setCreatedAt(new Date());
 			token.setToken(UserUtils.generateToken(user.getLogin() + System.currentTimeMillis()));
-			token.setIp(request.getRemoteAddr());
+			token.setIp(remoteAddr);
 			userTokensDao.add(token);
 			
 			Cookie userCookie = new Cookie("user", user.getLogin());
@@ -73,7 +72,7 @@ public class UsersService {
 			tokenCookie.setHttpOnly(true);
 			response.addCookie(userCookie);
 			response.addCookie(tokenCookie);
-			request.setAttribute("user", user);
+			return user;
 		} catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
 			throw new UsersServiceException("Error while trying to login user.", e);
 		}
