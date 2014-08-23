@@ -9,7 +9,15 @@ public class ThreadWithNewPosts {
 		
 		@Override
 		public int compare(ThreadWithNewPosts o1, ThreadWithNewPosts o2) {
-			return (int)(o2.getLastPostTimestamp().getTime() - o1.getLastPostTimestamp().getTime());
+			long firstTime = o2.getLastPostTimestamp().getTime();
+			long secondTime = o1.getLastPostTimestamp().getTime();
+			if (firstTime - secondTime < Integer.MIN_VALUE) {
+				return Integer.MIN_VALUE;
+			}
+			if (firstTime - secondTime > Integer.MAX_VALUE) {
+				return Integer.MAX_VALUE;
+			}
+			return (int)(firstTime - secondTime);
 		}
 		
 	};
